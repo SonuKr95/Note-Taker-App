@@ -34,7 +34,7 @@ addNoteButton.addEventListener("click", () => {
 });
 noteDiv.addEventListener("click", (e) => {
   if (e.target.className === "view-note") {
-    document.body.style.backgroundColor = "#5BC0F8";
+    document.body.style.backgroundColor = "#DFD3C3";
     e.composedPath().forEach((ele) => {
       if (ele.className !== "note-container") {
       } else {
@@ -62,6 +62,12 @@ noteDiv.addEventListener("click", (e) => {
 
 noteDiv.addEventListener("click", (e) => {
   if (e.target.className === "close-note") {
+    const showotherNote = document.querySelectorAll(".note-container");
+    showotherNote.forEach((notecont) => {
+      if (notecont.style.display === "none") {
+        notecont.style.display = "initial";
+      }
+    });
     document.body.style.backgroundColor = "";
     e.composedPath().forEach((sec) => {
       if (sec.className !== "note-container check-note") {

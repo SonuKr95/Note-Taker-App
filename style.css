@@ -21,7 +21,7 @@ p {
 .main-container {
   text-align: center;
   margin: 10px auto;
-  width: 800px;
+  max-width: 800px;
 }
 
 input[type="text"] {
@@ -88,8 +88,9 @@ label {
   top: 26%;
   background-color: #ded9d9;
   border-radius: 10px;
-  width: 700px;
+  max-width: 700px;
   height: auto;
+
   /* display: flex;
   flex-direction: column; */
 }
