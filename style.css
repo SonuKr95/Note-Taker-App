@@ -13,6 +13,11 @@ body {
   background-color: #fbfbfb;
 }
 
+p {
+  margin: 0;
+  padding: 0;
+}
+
 .main-container {
   text-align: center;
   margin: 10px auto;
@@ -51,21 +56,58 @@ label {
 
 .notes-div {
   display: flex;
+  /* flex-direction: column; */
   flex-wrap: wrap;
   width: 100%;
-  justify-content: start;
-  align-items: flex-start;
+  /* justify-content: center; */
+  align-items: center;
   padding: 2.5em;
   /* flex-flow: row nowrap; */
 }
 .note-container {
-  padding: 0.75em;
-  flex-basis: 350px;
-  height: 200px;
+  position: relative;
+  /* position: relative; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  padding: 1em 0.75em;
+  flex-basis: 300px;
+  height: 300px;
   text-align: start;
   overflow: hidden;
+  /* text-overflow: ellipsis; */
 }
 
-/* .check-note {
+/* .note-container {
+  /* height: 50px; */
+
+/* .my-note {
   position: absolute;
 } */
+.check-note {
+  position: absolute;
+  top: 26%;
+  background-color: #ded9d9;
+  border-radius: 10px;
+  width: 700px;
+  height: auto;
+  /* display: flex;
+  flex-direction: column; */
+}
+
+.close-note {
+  margin-top: 5px;
+  width: 30px;
+  position: absolute;
+  top: 11px;
+  left: 650px;
+}
+
+.btn-div {
+  margin-top: 1em;
+}
+
+.note-div {
+  height: 30%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

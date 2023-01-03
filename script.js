@@ -9,7 +9,7 @@ function createNote() {
   noteNum += 1;
   noteDiv.insertAdjacentHTML(
     "beforeend",
-    " <div class= 'note-container'>     <h2 >Note <span class=notecount> </span></h2> <p class='my-note'> </p>  <button class = 'view-note'> View Detail </button>  </div>"
+    " <div class= 'note-container'>     <h2 >Note <span class=notecount> </span></h2> <div class='note-div'> <p class='my-note'> </p> </div> <div class = 'btn-div' > <button class = 'view-note'> View Detail </button></div> </div> "
   );
   const notePara = document.querySelectorAll(".my-note");
   const notecount = document.querySelectorAll(".notecount");
@@ -38,8 +38,30 @@ noteDiv.addEventListener("click", (e) => {
       if (ele.className !== "note-container") {
       } else {
         ele.classList.add("check-note");
+        ele.insertAdjacentHTML(
+          "beforeend",
+          "<button class='close-note'>X</button>"
+        );
       }
     });
     // e.target.classList.add("check-note");
   }
 });
+
+noteDiv.addEventListener("click", (e) => {
+  if (e.target.className === "close-note") {
+    e.composedPath().forEach((sec) => {
+      if (sec.className !== "note-container check-note") {
+      } else {
+        sec.classList.remove("check-note");
+      }
+    });
+  }
+});
+
+//   if (e.target.className === "check-note") {
+//     e.composedPath().forEach((eler) => {
+//       console.log(eler);
+//     });
+//   }
+// });
