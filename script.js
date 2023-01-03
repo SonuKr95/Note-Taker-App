@@ -34,6 +34,7 @@ addNoteButton.addEventListener("click", () => {
 });
 noteDiv.addEventListener("click", (e) => {
   if (e.target.className === "view-note") {
+    document.body.style.backgroundColor = "#5BC0F8";
     e.composedPath().forEach((ele) => {
       if (ele.className !== "note-container") {
       } else {
@@ -44,12 +45,24 @@ noteDiv.addEventListener("click", (e) => {
         );
       }
     });
-    // e.target.classList.add("check-note");
   }
+  e.composedPath().forEach((el) => {
+    if (el.className !== "notes-div") {
+    } else {
+      const hideothernote = el.querySelectorAll(".note-container");
+      hideothernote.forEach((notecont) => {
+        // console.log(notecont.classList.length === 1);
+        if (notecont.classList.length === 1) {
+          notecont.style.display = "none";
+        }
+      });
+    }
+  });
 });
 
 noteDiv.addEventListener("click", (e) => {
   if (e.target.className === "close-note") {
+    document.body.style.backgroundColor = "";
     e.composedPath().forEach((sec) => {
       if (sec.className !== "note-container check-note") {
       } else {
